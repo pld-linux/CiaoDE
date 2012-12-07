@@ -1,0 +1,35 @@
+--- CiaoDE-1.14.2-13646/makedir/MenuOptions.pl.orig	2012-12-07 00:17:59.492617990 +0100
++++ CiaoDE-1.14.2-13646/makedir/MenuOptions.pl	2012-12-07 00:18:20.725950575 +0100
+@@ -374,10 +374,10 @@
+ %       'src', it is now under 'build')
+ get_enginedir('src', Prefix) := ~path_concat(Prefix, 'objs').
+ get_enginedir('ins', Prefix) :=
+-	~path_list_concat([Prefix, 'lib', 'ciao', ~component_name_version(ciao), 'engine']).
++	~path_list_concat([Prefix, 'lib64', 'ciao', ~component_name_version(ciao), 'engine']).
+ 
+ get_final_libroot('src', _Prefix) := ~component_src(ciao).
+-get_final_libroot('ins', Prefix) := ~path_concat(Prefix, 'lib').
++get_final_libroot('ins', Prefix) := ~path_concat(Prefix, 'lib64').
+ 
+ get_final_includeroot('src', Prefix) := ~path_concat(Prefix, 'include').
+ get_final_includeroot('ins', Prefix) := ~path_concat(Prefix, 'include').
+@@ -387,7 +387,7 @@
+ get_ciaohdir_root('src', Prefix) := ~path_concat(Prefix, 'include').
+ % note: this is INSTALLEDINCLUDEDIR, use a single definition!
+ get_ciaohdir_root('ins', Prefix) :=
+-	~path_list_concat([Prefix, 'lib', 'ciao', ~component_name_version(ciao), 'include']).
++	~path_list_concat([Prefix, 'lib64', 'ciao', ~component_name_version(ciao), 'include']).
+ 
+ get_update_sh('all',  'no').
+ get_update_sh('user', 'yes').
+--- CiaoDE-1.14.2-13646/ciao/lib/engine/system_info.pl~	2011-07-08 11:45:51.000000000 +0200
++++ CiaoDE-1.14.2-13646/ciao/lib/engine/system_info.pl	2012-12-07 00:19:37.559281199 +0100
+@@ -155,7 +155,7 @@
+ :- trust pred ciao_lib_dir(CiaoPath) => atm(CiaoPath) #
+ 	"@var{CiaoPath} is the path to the root of the Ciao
+ 	libraries. Inside this directory, there are the directories
+-	'lib', 'library' and 'contrib', which contain library modules.".
++	'lib64', 'library' and 'contrib', which contain library modules.".
+ :- impl_defined(ciao_lib_dir/1).
+ 
+ :- trust pred ciao_c_headers_dir(CiaoPath) => atm(CiaoPath) #

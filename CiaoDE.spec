@@ -9,12 +9,13 @@ Summary:	The Ciao Prolog development environment
 Summary(pl.UTF-8):	Środowisko programistyczne Ciao Prolog
 Name:		CiaoDE
 Version:	1.14.2
-Release:	0.1
+Release:	1
 License:	LGPL (Ciao), GPL (CiaoPP, lpdoc)
 Group:		Development/Languages
 Source0:	http://www.clip.dia.fi.upm.es/Software/Ciao/packages/branches/1.14/13646/%{name}-%{version}-13646.tar.gz
 # Source0-md5:	11d0a41222314ae1be1b048a7888048e
 Patch0:		%{name}-configure.patch
+Patch1:		%{name}-lib64.patch
 URL:		http://ciaohome.org/
 BuildRequires:	gsl-devel
 BuildRequires:	mysql-devel
@@ -67,6 +68,9 @@ o unikalnym połączeniu możliwości, m.in.:
 %prep
 %setup -q -n CiaoDE-%{version}-13646
 %patch0 -p1
+%ifarch %{x8664}
+%patch1 -p1
+%endif
 
 %build
 ./ciaosetup configure \
