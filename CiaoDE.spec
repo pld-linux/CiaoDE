@@ -12,11 +12,11 @@ Version:	1.14.2
 Release:	1
 License:	LGPL (Ciao), GPL (CiaoPP, lpdoc)
 Group:		Development/Languages
-Source0:	http://www.clip.dia.fi.upm.es/Software/Ciao/packages/branches/1.14/13646/%{name}-%{version}-13646.tar.gz
+Source0:	http://ciao-lang.org/packages/1.14/13646/%{name}-%{version}-13646.tar.gz
 # Source0-md5:	11d0a41222314ae1be1b048a7888048e
 Patch0:		%{name}-configure.patch
 Patch1:		%{name}-lib64.patch
-URL:		http://ciaohome.org/
+URL:		http://ciao-lang.org/
 BuildRequires:	gsl-devel
 BuildRequires:	mysql-devel
 Requires:	coreutils
