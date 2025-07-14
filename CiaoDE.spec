@@ -67,9 +67,9 @@ o unikalnym połączeniu możliwości, m.in.:
 
 %prep
 %setup -q -n CiaoDE-%{version}-13646
-%patch0 -p1
+%patch -P0 -p1
 %ifarch %{x8664}
-%patch1 -p1
+%patch -P1 -p1
 %endif
 
 %build
